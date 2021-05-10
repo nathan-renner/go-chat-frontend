@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="window">
+        <h1>Go Chat</h1>
+        <hr />
+        <div className="messages-container">
+          <div className="message-container me">
+            <div className="message">message</div>
+          </div>
+          <div className="message-container">
+            <div className="message">message</div>
+          </div>
+          <div className="message-container">
+            <div className="message">message</div>
+          </div>
+          <div className="message-container">
+            <div className="message">message</div>
+          </div>
+        </div>
+        <div className="bottom">
+          <hr />
+          <div className="input-container">
+            <input placeholder="Enter your message" />
+            <button>send</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
