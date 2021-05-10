@@ -10,6 +10,7 @@
   min-height: 100vh;
   background-color: var(--background);
   color: var(--white);
+  overflow: hidden;
 }
 
 .window {
@@ -34,15 +35,12 @@ hr {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 80%;
+  max-height: 80%;
 }
 
 .message-container {
   width: 100%;
   display: flex;
-}
-
-.message-container .me {
 }
 
 .message {
