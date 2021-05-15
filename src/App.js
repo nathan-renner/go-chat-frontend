@@ -12,13 +12,14 @@ function App() {
   const scrollRef = useRef();
 
   useEffect(() => {
-    !startup &&
+    if (!startup) {
       connectToServer(username, (msg) => {
         const parsedMsg = JSON.parse(msg.data);
         if (parsedMsg.status) setUserStatus([...userStatus, parsedMsg.body]);
         else setMessages([...messages, parsedMsg.body]);
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       });
+    }
   });
 
   const handleEnter = (e, start = false) => {
@@ -68,7 +69,7 @@ function App() {
             <div className="split">
               <h1>Go Chat</h1>
               <div>
-                <p className="online-header">Online:</p>
+                <p className="online-header">Users Status:</p>
                 {userStatus.slice(userStatus.length - 3).map((user) => (
                   <p className="online-user">{user}</p>
                 ))}
